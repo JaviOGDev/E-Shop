@@ -13,31 +13,20 @@ export const TopMenu = () => {
       <div>
         {/* Logo */}
         <Link href="/">
-          <span className={`${titleFont.className} antialiased font-bold`}>
-            E-Shop
-          </span>
+          <span className={`${titleFont.className} antialiased font-bold`}>E-Shop</span>
           <span> | Shop</span>
         </Link>
       </div>
 
       {/* Center Menu */}
       <div className="hidden sm:block">
-        <Link
-          className="m-2 p-2 rounded-md transition-all hover:bg-gray-100"
-          href="/category/men"
-        >
-          Man
+        <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/category/men">
+          Men
         </Link>
-        <Link
-          className="m-2 p-2 rounded-md transition-all hover:bg-gray-100"
-          href="/category/women"
-        >
+        <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/category/women">
           Women
         </Link>
-        <Link
-          className="m-2 p-2 rounded-md transition-all hover:bg-gray-100"
-          href="/category/kids"
-        >
+        <Link className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" href="/category/kid">
           Kids
         </Link>
       </div>
@@ -55,10 +44,7 @@ export const TopMenu = () => {
             <IoCartOutline className="w-5 h-5" />
           </div>
         </Link>
-        <button
-          className="m-2 p-2 rounded-md transition-all hover:bg-gray-100"
-          onClick={openSideMenu}
-        >
+        <button className="m-2 p-2 rounded-md transition-all hover:bg-gray-100" onClick={openSideMenu}>
           Menu
         </button>
       </div>
