@@ -19,24 +19,20 @@ export default function ({ params }: Props) {
   return (
     <div className="mt-5 mb-20 grid grid-cols-1 md:grid-cols-3 gap-3">
       {/* Slideshow */}
-      <div className="col-span-1 md:col-span-2">
-        {/* Desktop slideshow */}
-        <ProductSlideShow title={product.title} images={product.images} className="hidden: md:block"  />
-        {/* Movile slideshow */}
+      <div className="col-span-1 md:col-span-2 ">
+        {/* Mobile Slideshow */}
         <ProductMobileSlideShow title={product.title} images={product.images} className="block md:hidden" />
+
+        {/* Desktop Slideshow */}
+        <ProductSlideShow title={product.title} images={product.images} className="hidden md:block" />
       </div>
 
       {/* Details */}
       <div className="col-span-1 px-5">
-        <h1 className={`${titleFont.className} antialiased font-bold text-xl`}>
-          {product.title}
-        </h1>
+        <h1 className={`${titleFont.className} antialiased font-bold text-xl`}>{product.title}</h1>
         <p className="text-lg mb-5">$ {product.price}</p>
         {/* Selector sizes */}
-        <SizeSelector
-          selectedSize={product.sizes[0]}
-          availableSize={product.sizes}
-        />
+        <SizeSelector selectedSize={product.sizes[0]} availableSize={product.sizes} />
         {/* Selector quantity */}
         <QuantitySelector quantity={2} />
         {/* Button */}

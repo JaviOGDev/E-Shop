@@ -32,7 +32,9 @@ export const ProductSlideShow = ({ images, title, className }: Props) => {
         }
         spaceBetween={10}
         navigation={true}
-        autoplay={{ delay: 2500 }}
+        autoplay={{
+          delay: 2500,
+        }}
         thumbs={{
           swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
         }}
@@ -42,7 +44,7 @@ export const ProductSlideShow = ({ images, title, className }: Props) => {
         {images.map((image) => (
           <SwiperSlide key={image}>
             <Image
-              width={1014}
+              width={1024}
               height={800}
               src={`/products/${image}`}
               alt={title}
@@ -63,13 +65,7 @@ export const ProductSlideShow = ({ images, title, className }: Props) => {
       >
         {images.map((image) => (
           <SwiperSlide key={image}>
-            <Image
-              width={300}
-              height={300}
-              src={`/products/${image}`}
-              alt={title}
-              className="rounded-lg object-fill"
-            />
+            <Image width={300} height={300} src={`/products/${image}`} alt={title} className="rounded-lg object-fill" />
           </SwiperSlide>
         ))}
       </Swiper>
