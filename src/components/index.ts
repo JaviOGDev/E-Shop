@@ -7,3 +7,4 @@ export * from "./ui/sidebar/Sidebar";
 export * from "./product/size-selector/SizeSelector";
 export * from "./product/quantity-selector/QuantitySelector";
 export * from "./product/slidewshow/ProductSlideShow"
+export * from "./product/slidewshow/ProductMobileSlideShow"
