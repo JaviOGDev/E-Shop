@@ -3,13 +3,9 @@ import { initialData } from "@/seed/seed";
 import Image from "next/image";
 import Link from "next/link";
 
-const productsInCart = [
-  initialData.products[0],
-  initialData.products[1],
-  initialData.products[2],
-];
+const productsInCart = [initialData.products[0], initialData.products[1], initialData.products[2]];
 
-export default function () {
+export default function CheckoutPage() {
   return (
     <div className="flex justify-center items-center mb-72 px-10 sm:px-0">
       <div className="flex flex-col w-[1000px]">
@@ -75,7 +71,7 @@ export default function () {
               {/* Disclaimer */}
               <p className="mb-5">
                 <span className="text-xs">
-                  By clicking the "Place Order" button, you agree to our&nbsp;
+                  By clicking the &quot;Place Order&quot; button, you agree to our&nbsp;
                   <a href="#" className="underline">
                     terms and conditions
                   </a>
@@ -87,10 +83,7 @@ export default function () {
                 </span>
               </p>
 
-              <Link
-                className="flex btn-primary justify-center"
-                href="/orders/123"
-              >
+              <Link className="flex btn-primary justify-center" href="/orders/123">
                 Place order
               </Link>
             </div>
