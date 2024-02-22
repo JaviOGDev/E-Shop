@@ -3,7 +3,10 @@ import { inter } from "@/config/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "E-Shop",
+  title: {
+    template: "%s - E-Shop",
+    default: "Home - E-Shop",
+  },
   description: "A Nextjs E-Shop",
 };
 
