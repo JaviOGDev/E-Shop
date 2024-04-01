@@ -20,16 +20,16 @@ npm install
 docker-compose up -d
 ```
 
-4. Execute seed
-
-```bash
-npm run seed
-```
-
-5. Run migrations of Prisma
+4. Run migrations of Prisma
 
 ```bash
 npx prisma migrate dev
+```
+
+5. Execute seed
+
+```bash
+npm run seed
 ```
 
 6. Then run:
