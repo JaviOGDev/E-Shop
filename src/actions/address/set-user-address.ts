@@ -1,6 +1,6 @@
 "use server";
 
-import { Address } from "@/interfaces";
+import type { Address } from "@/interfaces";
 import prisma from "@/lib/prisma";
 
 export const setUserAddress = async (address: Address, userId: string) => {
@@ -9,13 +9,13 @@ export const setUserAddress = async (address: Address, userId: string) => {
 
     return {
       ok: true,
-      address: address,
+      address: newAddress,
     };
   } catch (error) {
     console.log(error);
     return {
       ok: false,
-      message: "Could not save address",
+      message: "No se pudo grabar la dirección",
     };
   }
 };
@@ -25,12 +25,10 @@ const createOrReplaceAddress = async (address: Address, userId: string) => {
     console.log({ userId });
 
     const storedAddress = await prisma.userAddress.findUnique({
-      where: {
-        userId,
-      },
+      where: { userId },
     });
 
-    const addresToSave = {
+    const addressToSave = {
       userId: userId,
       address: address.address,
       address2: address.address2,
@@ -44,17 +42,15 @@ const createOrReplaceAddress = async (address: Address, userId: string) => {
 
     if (!storedAddress) {
       const newAddress = await prisma.userAddress.create({
-        data: addresToSave,
+        data: addressToSave,
       });
 
       return newAddress;
     }
 
     const updatedAddress = await prisma.userAddress.update({
-      where: {
-        userId,
-      },
-      data: addresToSave,
+      where: { userId },
+      data: addressToSave,
     });
 
     return updatedAddress;
